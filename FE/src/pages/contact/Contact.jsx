@@ -1,5 +1,7 @@
-import React from 'react'
-import './contact.scss'
+import React from "react";
+import "./contact.scss";
+import girl from "../../assets/fitflowgirl.jpg";
+
 function Contact() {
   return (
     <div>
@@ -21,7 +23,7 @@ function Contact() {
           </div>
           <div className="breadcrumb-nav">
             <ul>
-              <li><a href="index.html">Home</a></li>
+              <li><a href="/">Home</a></li>
               <li className="active">Contact</li>
             </ul>
           </div>
@@ -38,27 +40,27 @@ function Contact() {
                 title: "info@webmail.com",
                 text: "Select a category that best suits your interest. Use filters to customize your search and to find exactly.",
                 link: "mailto:info@webmail.com",
-                btnText: "Email Us"
+                btnText: "Email Us",
               },
               {
                 icon: "flaticon-phone-call",
                 title: "897-098-574-87",
                 text: "Use filters to customize your search and to find exactly select a category that best suits your interest.",
                 link: "tel:89709857487",
-                btnText: "Make A Call"
+                btnText: "Make A Call",
               },
               {
                 icon: "flaticon-location-1",
                 title: "12/A, Miranda Hall, NYC",
                 text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
                 link: "about.html",
-                btnText: "Make Phone"
-              }
+                btnText: "Make Phone",
+              },
             ].map((item, idx) => (
               <div key={idx} className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                 <div className="single-address mb-130 text-center">
                   <div className="shape">
-                    <img src="assets/img/bg/pattern.jpg" alt="" />
+                    <img src={girl} alt="FitFlow girl" className="girl" />
                   </div>
                   <div className="address-icon">
                     <i className={item.icon}></i>
@@ -95,12 +97,12 @@ function Contact() {
       <div className="answare-area pb-160">
         <div className="container">
           <div className="row">
-            <div className="col-xl-123">
-              <div className="answere-box answere-box-2">
-                <div className="thumb mb-30 mb-lg-0">
-                  <img src="assets/img/faq/ans2.jpg" alt="FAQ Visual" />
+            <div className="col-xl-12">
+              <div className="answere-box answere-box-2 d-flex align-items-start gap-5">
+                <div className="thumb mb-30 mb-lg-0" style={{ flex: 1 }}>
+                  <img src={girl} alt="FAQ Visual" />
                 </div>
-                <div className="answere-form">
+                <div className="answere-form" style={{ flex: 2 }}>
                   <span>Answers</span>
                   <h3>More Answers</h3>
                   <form onSubmit={(e) => e.preventDefault()}>
@@ -135,9 +137,8 @@ function Contact() {
           </div>
         </div>
       </div>
-
     </div>
-  )
+  );
 }
 
-export default Contact
+export default Contact;
