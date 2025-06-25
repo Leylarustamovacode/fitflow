@@ -1,82 +1,402 @@
-.contain{
-  font-family: Arial, sans-serif;
-  max-width: 400px;
-  margin: auto;
-  text-align: center;
-  padding: 20px;
+.contain {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1300px;
+  margin: 50px auto;
+  padding: 30px;
+ 
+  border-radius: 20px;
+  color: #2c3e50;
 }
 
 h1 {
-  color: #0077cc;
+  text-align: center;
+  color: #3a7bd5;
+  margin-bottom: 50px;
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
+/* Üst sətri flexlə yan-yana edir */
+.main-row {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Kartların ümumi stili */
+.card {
+  background: #ffffff;
+  padding: 40px 35px;
+  border-radius: 24px;
+  box-shadow: 0 8px 25px rgba(58, 77, 115, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  cursor: default;
+  flex: 1 1 420px; /* Minimum 420px, amma lazım olduqda genişlənir */
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(58, 77, 115, 0.15);
+  }
+}
+
+/* BMI Kartı */
+.bmi-area {
+  min-width: 420px;
+}
+
+/* Water Reminder Kartı */
+.water-area {
+  min-width: 420px;
+}
+
+/* Label və input */
+label {
+  font-weight: 600;
+  font-size: 16px;
+  color: #4a6fa5;
+  display: block;
+  margin-top: 25px;
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+
+input {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  border: 2px solid #d0dbf9;
+  background: #f9fbff;
+  color: #2c3e50;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: #7aa1f8;
+    box-shadow: 0 0 10px #7aa1f880;
+  }
+}
+
+/* Düymə */
+button {
+  background-color: #4a90e2;
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 15px;
+  box-shadow: 0 8px 20px #4a90e280;
+  transition: background-color 0.35s ease, transform 0.25s ease, box-shadow 0.35s ease;
+
+  &:hover {
+    background-color: #3d7bc1;
+    transform: scale(1.05);
+    box-shadow: 0 14px 28px #3d7bc180;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Circle tracker su sayğacı */
 .circle-tracker {
   position: relative;
-  width: 150px;
-  height: 150px;
-  margin: auto;
+  width: 170px;
+  height: 170px;
+  margin: 30px auto;
+
+  svg circle {
+    transition: stroke-dashoffset 1s ease;
+    stroke-linecap: round;
+  }
 }
 
+/* Su damcısı tam ortada */
 .water-drop {
   position: absolute;
-  top: 45px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  font-size: 32px;
+  transform: translate(-50%, -50%) rotate(0deg);
+  font-size: 36px;
+  animation: water-drop-shake 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 5px #4a90e2);
 }
 
+@keyframes water-drop-shake {
+  0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+  50% { transform: translate(-50%, -45%) rotate(5deg); }
+}
+
+/* Stəkanlar */
 .glasses {
   display: flex;
   justify-content: center;
-  margin: 20px 0;
-  gap: 10px;
+  margin: 25px 0;
+  gap: 14px;
   flex-wrap: wrap;
 }
 
 .glass {
-  width: 40px;
-  height: 60px;
-  background: #ffffff;
-  
-  clip-path: polygon(
-    20% 0%, 80% 0%, 70% 100%, 30% 100%
-  );
+  width: 45px;
+  height: 70px;
+  background: #e8efff;
+  clip-path: polygon(20% 0%, 80% 0%, 70% 100%, 30% 100%);
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+  border: 1.5px solid #acc0ff;
+  box-shadow: inset 0 0 10px #d6e2ff;
+
+  &.full {
+    background: #4a90e2;
+    border-color: #4a90e2;
+    box-shadow: 0 0 15px #4a90e2cc;
+  }
+}
+
+/* BMI indikatoru */
+.bmi-indicator {
+  margin-top: 28px;
+  text-align: center;
+}
+
+.bmi-bar-wrapper {
   position: relative;
-  transition: background 0.3s ease;
+  height: 24px;
+  background: linear-gradient(to right,
+    #fbc02d 0%,       /* underweight - soft yellow */
+    #4caf50 25%,      /* normal - green */
+    #ffb74d 50%,      /* overweight - light orange */
+    #e57373 75%       /* obese - soft red */
+  );
+  border-radius: 16px;
+  margin-bottom: 14px;
+  box-shadow: inset 0 0 6px #fff6;
 }
 
-.glass.full {
-  background: #00aaff;
+.bmi-bar {
+  height: 100%;
+  border-radius: 16px;
+  background: transparent;
 }
 
-
-.input-area {
-  margin-top: 20px;
-  text-align: left;
-}
-
-.input-area label {
-  display: block;
-  margin: 8px 0 4px;
-}
-
-.input-area input {
-  width: 100%;
-  padding: 6px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-button {
-  background-color: #00aaff;
-  color: white;
-  padding: 8px 16px;
-  border: none;
+.bmi-marker {
+  position: absolute;
+  top: -6px;
+  width: 14px;
+  height: 36px;
+  background-color: #333333cc;
   border-radius: 6px;
-  cursor: pointer;
+  transform: translateX(-50%);
+  box-shadow: 0 0 6px #555;
+  transition: left 0.6s ease;
 }
 
-button:hover {
-  background-color: #0077cc;
+.bmi-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #6b7a9a;
+  margin-top: 6px;
+}
+
+.bmi-status {
+  font-size: 20px;
+  margin-top: 16px;
+  color: #3a5a9f;
+  font-weight: 700;
+}
+
+/* Yuxu kartı */
+.sleep-area {
+  background: #eaf1ff;
+  color: #2a3d66;
+  padding: 40px 35px;
+  border-radius: 24px;
+  box-shadow: 0 12px 40px rgba(74, 144, 226, 0.2);
+  min-width: 880px;
+  margin-top: 40px;
+
+  label {
+    display: block;
+    margin-top: 22px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #4a6fa5;
+  }
+
+  input[type="time"] {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 12px;
+    border: 2px solid #a9befc;
+    background: #f8fbff;
+    color: #2a3d66;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: #7aa1f8;
+      box-shadow: 0 0 10px #7aa1f880;
+    }
+  }
+
+  .sleep-duration-bar-wrapper {
+    width: 100%;
+    height: 24px;
+    background: #cbd9ff;
+    border-radius: 16px;
+    margin-top: 28px;
+    overflow: hidden;
+    box-shadow: inset 0 0 10px #aac1ffcc;
+  }
+
+  .sleep-duration-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #7aa1f8, #a1c4ff);
+    border-radius: 16px 0 0 16px;
+    transition: width 1.2s ease;
+    box-shadow: 0 0 12px #7aa1f8cc;
+  }
+
+  p {
+    margin-top: 14px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #2a3d66;
+  }
+}
+
+.sleep-icon {
+  font-size: 48px;
+  position: absolute;
+  top: 22px;
+  right: 30px;
+  filter: drop-shadow(0 0 4px #4a90e2);
+  animation: pulse 3s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.1); }
+}
+
+/* Həftəlik yuxu qrafiki */
+
+.weekly-sleep-graph-area {
+  margin-top: 40px;
+  min-width: 880px;
+  background: #fff;
+  padding: 30px 35px;
+  border-radius: 24px;
+  box-shadow: 0 8px 30px rgba(58, 77, 115, 0.1);
+  color: #2c3e50;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #3a7bd5;
+    font-weight: 700;
+  }
+}
+
+.sleep-graph {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  border-left: 2px solid #7aa1f8;
+  border-bottom: 2px solid #7aa1f8;
+  margin-bottom: 20px;
+  user-select: none;
+}
+
+/* Y oxunun qırıq xətləri */
+.y-grid-line {
+  position: absolute;
+  left: -40px;
+  width: 35px;
+  border-top: 1px dashed #a6bae7;
+  color: #7a92c0;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: right;
+
+  &.y-10 { top: 0%; }
+  &.y-8  { top: 20%; }
+  &.y-6  { top: 40%; }
+  &.y-4  { top: 60%; }
+  &.y-2  { top: 80%; }
+  &.y-0  { top: 100%; }
+}
+
+/* Sleep nöqtələrinin yerləşməsi */
+.sleep-points {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 15px;
+  pointer-events: none;
+}
+
+.sleep-point {
+  width: 16px;
+  height: 16px;
+  background: #4a90e2;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #4a90e280;
+  transition: bottom 0.6s ease;
+  cursor: default;
+  position: relative;
+
+  &:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 12px;
+    background: #4a90e2cc;
+    color: white;
+    border-radius: 12px;
+    white-space: nowrap;
+    font-size: 13px;
+    pointer-events: none;
+  }
+}
+
+/* Sınıq xəttlə Sleep line üçün (sleep nöqtələrini birləşdirən) */
+.sleep-line {
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  right: 15px;
+  height: 100%;
+  border-bottom: 2px dashed #4a90e2cc;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Həftənin günləri üçün etiketlər */
+.sleep-labels {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: #6b7a9a;
+  font-size: 16px;
+  padding: 0 25px;
+  user-select: none;
+  letter-spacing: 0.05em;
 }
