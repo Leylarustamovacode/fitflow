@@ -1,0 +1,441 @@
+.practice-app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+// Cins seçimi
+.practice-gender-selection {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.practice-container {
+  text-align: center;
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 2rem;
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2d3748;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #4a5568;
+  }
+
+  .practice-description {
+    color: #718096;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+.practice-gender-buttons {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.practice-gender-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem 2rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 15px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4a5568;
+  min-width: 120px;
+
+  .practice-icon {
+    font-size: 2rem;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  &.practice-male-btn:hover {
+    border-color: #3182ce;
+    background: #ebf8ff;
+  }
+
+  &.practice-female-btn:hover {
+    border-color: #d53f8c;
+    background: #fdf2f8;
+  }
+}
+
+// Təlim ekranı
+.practice-exercise-screen {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 1rem;
+
+  .practice-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .practice-back-btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #5a67d8;
+      transform: translateY(-1px);
+    }
+  }
+
+  .practice-mute-btn {
+    background: #f7fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #edf2f7;
+      transform: translateY(-1px);
+    }
+  }
+
+  .practice-progress-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+    margin-left: 2rem;
+
+    .practice-progress-bar {
+      flex: 1;
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 4px;
+      overflow: hidden;
+
+      .practice-progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        transition: width 0.3s ease;
+      }
+    }
+
+    .practice-progress-text {
+      font-weight: 600;
+      color: #4a5568;
+      white-space: nowrap;
+    }
+  }
+
+  .practice-music-indicator {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 10px;
+
+    .practice-music-note {
+      color: #667eea;
+      font-size: 0.9rem;
+      font-style: italic;
+      animation: musicPulse 2s infinite;
+    }
+  }
+
+  .practice-exercise-content {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 600px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .practice-rest-screen {
+    padding: 2rem 0;
+
+    .practice-rest-title {
+      font-size: 2rem;
+      color: #667eea;
+      margin-bottom: 2rem;
+    }
+
+    .practice-rest-animation {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      margin: 2rem auto;
+
+      .practice-pulse-circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: rgba(102, 126, 234, 0.3);
+        animation: pulse 2s infinite;
+      }
+    }
+
+    .practice-next-exercise {
+      font-size: 1.1rem;
+      color: #4a5568;
+      margin-top: 1rem;
+    }
+  }
+
+  .practice-exercise-info {
+    margin-bottom: 2rem;
+
+    .practice-exercise-name {
+      font-size: 2.5rem;
+      color: #2d3748;
+      margin-bottom: 1rem;
+    }
+
+    .practice-exercise-visual {
+      margin: 2rem 0;
+
+      .practice-exercise-icon {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .practice-exercise-description {
+      font-size: 1.1rem;
+      color: #718096;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .practice-timer-section {
+    margin: 3rem 0;
+
+    .practice-timer-circle {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+
+      &.exercise {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+      }
+
+      &.rest {
+        background: linear-gradient(135deg, #48bb78, #38a169);
+        color: white;
+      }
+
+      &.warning {
+        animation: warningPulse 0.5s infinite;
+      }
+
+      .practice-timer-number {
+        font-size: 4rem;
+        font-weight: bold;
+        line-height: 1;
+      }
+
+      .practice-timer-label {
+        font-size: 1rem;
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .practice-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+
+    .practice-control-btn {
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+    }
+
+    .practice-pause-btn {
+      background: #667eea;
+      color: white;
+
+      &:hover {
+        background: #5a67d8;
+        transform: translateY(-2px);
+      }
+    }
+
+    .practice-skip-btn {
+      background: #e2e8f0;
+      color: #4a5568;
+
+      &:hover {
+        background: #cbd5e0;
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+// Bitmə ekranı
+.practice-completion-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 2rem;
+
+  .practice-completion-content {
+    text-align: center;
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+
+    .practice-success-icon {
+      font-size: 5rem;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #2d3748;
+      margin-bottom: 1rem;
+    }
+
+    .practice-completion-message {
+      font-size: 1.2rem;
+      color: #4a5568;
+      margin-bottom: 2rem;
+    }
+
+    .practice-stats {
+      display: flex;
+      justify-content: space-around;
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: #f7fafc;
+      border-radius: 15px;
+
+      .practice-stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .practice-stat-number {
+          font-size: 2rem;
+          font-weight: bold;
+          color: #667eea;
+        }
+
+        .practice-stat-label {
+          font-size: 0.9rem;
+          color: #718096;
+          margin-top: 0.5rem;
+        }
+      }
+    }
+
+    .practice-restart-btn {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      padding: 1rem 2.5rem;
+      border-radius: 15px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+      }
+    }
+  }
+}
+
+// Animasiya
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes musicPulse {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes warningPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

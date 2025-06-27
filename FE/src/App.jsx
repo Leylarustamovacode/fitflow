@@ -11,6 +11,7 @@ import Detail from './pages/detail/Detail'
 import NoPage from './pages/nopage/NoPage'
 import Contact from './pages/contact/Contact'
 import Exercise from './pages/exercise/Exercise'
+import Practice from './pages/practices/Practice';
 
 function App() {
 
@@ -24,9 +25,10 @@ function App() {
             <Route path="about" element={<About />} />
              <Route path="exercise" element={<Exercise />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="practice" element={<Practice />} />
             <Route path="admin" element={<Admin />} />
             <Route path="adminadd" element={<AdminAdd />} />
-            <Route path="detail/:id" element={<Detail />} />
+            <Route path="detail" element={<Detail />} />
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
