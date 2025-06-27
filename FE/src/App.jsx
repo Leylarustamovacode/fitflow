@@ -20,9 +20,7 @@ function App() {
 
   return (
     <>
-      <div className="bg-green-500 text-white p-4 rounded-lg text-xl">
-      Tailwind işləyir!
-    </div>
+      
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
