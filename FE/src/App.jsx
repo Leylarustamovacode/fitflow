@@ -10,22 +10,29 @@ import About from './pages/about/About'
 import Detail from './pages/detail/Detail'
 import NoPage from './pages/nopage/NoPage'
 import Contact from './pages/contact/Contact'
-import Exercise from './pages/exercise/Exercise'
+
 import Practice from './pages/practices/Practice';
+import HealthTracker from './pages/tracker/HealthTracker';
+import Fag from './pages/faq/Fag';
 
 function App() {
 
 
   return (
     <>
+      <div className="bg-green-500 text-white p-4 rounded-lg text-xl">
+      Tailwind işləyir!
+    </div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout/>}>
+          <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
-             <Route path="exercise" element={<Exercise />} />
+            <Route path="healthtracker" element={<HealthTracker />} />
             <Route path="contact" element={<Contact />} />
             <Route path="practice" element={<Practice />} />
+            <Route path="fag" element={<Fag />} />
+
             <Route path="admin" element={<Admin />} />
             <Route path="adminadd" element={<AdminAdd />} />
             <Route path="detail" element={<Detail />} />

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "./exercise.scss";
+import "./healthtracker.scss";
 
-function Exercise() {
+function HealthTracker() {
   // Mövcud state-lər
   const [height, setHeight] = useState(localStorage.getItem("height") || "");
   const [weight, setWeight] = useState(localStorage.getItem("weight") || "");
@@ -312,4 +312,4 @@ function Exercise() {
   );
 }
 
-export default Exercise;
+export default HealthTracker;

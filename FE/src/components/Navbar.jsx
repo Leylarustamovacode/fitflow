@@ -15,9 +15,9 @@ function Navbar() {
         {" "}
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
-        <Link to="/detail">Abt</Link>
-        <Link to="/exercise">Exercise</Link>
+        <Link to="/healthtracker">HealthTracker</Link>
          <Link to="/practice">Practice</Link>
+        <Link to="/fag">Fag</Link>
         <Link to="/contact">Contact</Link>
         {/* <Link to="/admin">Admin</Link>
         <Link to="/adminadd">AdminAdd</Link> */}
