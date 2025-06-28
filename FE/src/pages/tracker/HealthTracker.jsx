@@ -175,7 +175,7 @@ function HealthTracker() {
 
   return (
     <div className="contain">
-      <h1>FitFlow</h1>
+      <h1>Health Tracker</h1>
 
       {/* Üst sıra: BMI və Water Tracker yan-yana */}
       <div className="main-row">
@@ -196,7 +196,7 @@ function HealthTracker() {
             onChange={(e) => setWeight(e.target.value)}
             placeholder="Enter your weight"
           />
-          <button onClick={handleBmi}>Calculate BMI</button>
+          <button className="hbtn" onClick={handleBmi}>Calculate BMI</button>
           {bmi && (
             <>
               <p>Your BMI: <strong>{bmi}</strong></p>
@@ -247,7 +247,7 @@ function HealthTracker() {
               <div key={i} className={i < glasses ? "glass full" : "glass"}></div>
             ))}
           </div>
-          <button onClick={handleDrink}>Drink 250ml</button>
+          <button className="hbtn" onClick={handleDrink}>Drink 250ml</button>
         </div>
       </div>
 

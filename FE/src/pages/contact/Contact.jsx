@@ -1,144 +1,222 @@
-import React from "react";
+
 import "./contact.scss";
-import girl from "../../assets/fitflowgirl.jpg";
 
-function Contact() {
-  return (
-    <div>
-      {/* Breadcrumb Area */}
-      <div
-        className="breadcrumb-area mb-160"
-        style={{ backgroundImage: "url(assets/img/bg/breadcrumb-bg.jpg)" }}
-        data-overlay="dark"
-        data-opacity="7"
-      >
-        <div className="container pt-150 pb-150 position-relative">
-          <div className="row justify-content-center">
-            <div className="col-xl-12">
-              <div className="breadcrumb-title">
-                <span className="sub-title">Get In Touch</span>
-                <h3 className="title">Get Answers</h3>
-              </div>
-            </div>
-          </div>
-          <div className="breadcrumb-nav">
-            <ul>
-              <li><a href="/">Home</a></li>
-              <li className="active">Contact</li>
-            </ul>
-          </div>
+import React, { useState } from 'react';
+import { MapPin, Phone, Mail, Clock, Instagram, Facebook, MessageCircle, Send, CheckCircle } from 'lucide-react';
+
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [showToast, setShowToast] = useState(false);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setShowToast(true);
+    setFormData({ name: '', email: '', message: '' });
+    setTimeout(() => setShowToast(false), 4000);
+  };
+
+  const LottieAnimation = () => (
+    <div className="lottie-container">
+      <div className="email-animation">
+        <div className="envelope">
+          <div className="letter"></div>
         </div>
-      </div>
-
-      {/* Address Area */}
-      <div className="address-area">
-        <div className="container">
-          <div className="row">
-            {[
-              {
-                icon: "flaticon-email-1",
-                title: "info@webmail.com",
-                text: "Select a category that best suits your interest. Use filters to customize your search and to find exactly.",
-                link: "mailto:info@webmail.com",
-                btnText: "Email Us",
-              },
-              {
-                icon: "flaticon-phone-call",
-                title: "897-098-574-87",
-                text: "Use filters to customize your search and to find exactly select a category that best suits your interest.",
-                link: "tel:89709857487",
-                btnText: "Make A Call",
-              },
-              {
-                icon: "flaticon-location-1",
-                title: "12/A, Miranda Hall, NYC",
-                text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
-                link: "about.html",
-                btnText: "Make Phone",
-              },
-            ].map((item, idx) => (
-              <div key={idx} className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                <div className="single-address mb-130 text-center">
-                  <div className="shape">
-                    <img src={girl} alt="FitFlow girl" className="girl" />
-                  </div>
-                  <div className="address-icon">
-                    <i className={item.icon}></i>
-                  </div>
-                  <div className="address-desc">
-                    <h4><a href={item.link}>{item.title}</a></h4>
-                    <p>{item.text}</p>
-                    <a href={item.link} className="generic-btn">
-                      {item.btnText} <span className="pl-13 d-inline-block">+</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Map Area */}
-      <div className="map-area pb-95">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14596.899807208923!2d90.3654215!3d23.8461445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c17d65b609fd%3A0x1ffbba3a894b4cf5!2sDHAKA%20BOAT%20CLUB%20LIMITED!5e0!3m2!1sen!2sbd!4v1617309291595!5m2!1sen!2sbd"
-          width="100%"
-          height="450"
-          style={{ border: 0 }}
-          allowFullScreen=""
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Google Map"
-        ></iframe>
-      </div>
-
-      {/* Answer Form Area */}
-      <div className="answare-area pb-160">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-12">
-              <div className="answere-box answere-box-2 d-flex align-items-start gap-5">
-                <div className="thumb mb-30 mb-lg-0" style={{ flex: 1 }}>
-                  <img src={girl} alt="FAQ Visual" />
-                </div>
-                <div className="answere-form" style={{ flex: 2 }}>
-                  <span>Answers</span>
-                  <h3>More Answers</h3>
-                  <form onSubmit={(e) => e.preventDefault()}>
-                    <div className="row row-20">
-                      <div className="col-xl-6">
-                        <div className="input-group mb-20">
-                          <input type="text" name="fullname" placeholder="Enter full name" />
-                        </div>
-                      </div>
-                      <div className="col-xl-6">
-                        <div className="input-group mb-20">
-                          <input type="email" name="email" placeholder="Enter your email" />
-                        </div>
-                      </div>
-                      <div className="col-xl-12">
-                        <div className="input-gruop mb-15">
-                          <textarea name="message" cols="30" rows="10" placeholder="Enter message"></textarea>
-                        </div>
-                      </div>
-                      <div className="col-xl-12">
-                        <div className="text-centers">
-                          <button type="submit">
-                            <i className="fal fa-envelope"></i> Sent Mail
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="floating-dots">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
     </div>
   );
-}
+
+  return (
+    <div className="contact-page">
+      
+
+      <div className="container">
+        <div className="page-header">
+          <h1 className="page-title">Get In Touch</h1>
+          <p className="page-subtitle">
+            Ready to start your fitness journey? Contact us today and let's achieve your goals together!
+          </p>
+        </div>
+
+        <div className="contact-grid">
+          {/* FORM SAHƏSİ */}
+          <div className="contact-form-section">
+            <LottieAnimation />
+            <h2 className="form-title">
+              <Send size={24} />
+              Send us a Message
+            </h2>
+            <form className="contact-form" onSubmit={handleSubmit}>
+              <div className="form-group">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Full Name"
+                  className="form-input"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email Address"
+                  className="form-input"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <textarea
+                  name="message"
+                  placeholder="Tell us about your fitness goals..."
+                  className="form-input form-textarea"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" className="submit-btn">
+                <Send size={20} />
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          {/* ƏLAQƏ MƏLUMATLARI */}
+          <div className="contact-info-section">
+            <h2 className="info-title">
+              <MapPin size={24} />
+              Contact Information
+            </h2>
+            <div className="contact-info">
+              <div className="info-item">
+  <div className="info-icon"><Phone size={20} /></div>
+  <div className="info-content">
+    <h3>Phone Number</h3>
+    <p>
+      <a href="tel:+15551234567">+1 (555) 123-4567</a>
+    </p>
+  </div>
+</div>
+<div className="info-item">
+  <div className="info-icon"><Mail size={20} /></div>
+  <div className="info-content">
+    <h3>Email Address</h3>
+    <p>
+      <a href="mailto:info@fitnessgym.com">info@fitnessgym.com</a>
+    </p>
+  </div>
+</div>
+<div className="info-item">
+  <div className="info-icon"><MapPin size={20} /></div>
+  <div className="info-content">
+    <h3>Address</h3>
+    <p>
+      <a
+        href="https://www.google.com/maps?q=123+Fitness+Street,+Gym+City,+GC+12345"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        123 Fitness Street, Gym City, GC 12345
+      </a>
+    </p>
+  </div>
+</div>
+
+             
+              <div className="info-item">
+                <div className="info-icon"><Clock size={20} /></div>
+                <div className="info-content">
+                  <h3>Opening Hours</h3>
+                  <p>Mon–Fri: 6AM–10PM<br />Sat–Sun: 8AM–8PM</p>
+                </div>
+              </div> 
+            </div>
+          </div>
+        </div>
+
+        {/* XƏRİTƏ SAHƏSİ */}
+       <div className="map-section">
+  <h2 className="info-title">
+    <MapPin size={24} /> Find Us
+  </h2>
+  <div className="map-container">
+    <iframe
+      title="Google Map"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019589850244!2d-122.41941548468225!3d37.77492927975965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809cbae870b7%3A0xe4cb2b24e8f70c9a!2s123%20Fitness%20St%2C%20San%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1719566544314!5m2!1sen!2sus"
+      width="100%"
+      height="350"
+      style={{ border: 0 }}
+      allowFullScreen=""
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+</div>
+
+
+        {/* SOSİAL MƏTBUAT */}
+        <div className="social-section">
+          <h2 className="social-title">Follow Us</h2>
+          <div className="social-links">
+  <a
+    href="https://www.instagram.com/yourpage"
+    className="social-link instagram"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Instagram size={24} />
+  </a>
+  <a
+    href="https://www.facebook.com/yourpage"
+    className="social-link facebook"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Facebook size={24} />
+  </a>
+  <a
+    href="https://wa.me/15551234567"
+    className="social-link whatsapp"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <MessageCircle size={24} />
+  </a>
+</div>
+
+        </div>
+      </div>
+
+      {/* TOAST */}
+      {showToast && (
+        <div className={`toast ${showToast ? 'show' : ''}`}>
+          <CheckCircle size={20} />
+          Message sent successfully!
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default Contact;

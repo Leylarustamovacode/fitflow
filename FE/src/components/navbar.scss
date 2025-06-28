@@ -1,26 +1,255 @@
-.navbar{
-    
-    max-width: 100%;
-    min-height: 72px;
-    display: flex;
-    justify-content: space-between;
-    .logo{
-        max-width:200px;
-        min-height: 72px;
-        
-        border:3px solid red;
-       
-    }
-    display: flex;
-   justify-content: space-between;
-    align-items: center;
-    a{
+/* Navbar.scss */
 
-    color: black;
-    text-decoration: none;
-     margin: 30px;
-     color: #0E7BC3;
-     font-weight: 700;
-     font-size: 25px;
-    }
+.navbar-container {
+  position: fixed; // ✅ navbar sabit
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999; // ✅ hər şeydən yuxarı
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+
+  &.light {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #374151;
+  }
+
+  &.dark {
+    background: rgba(30, 30, 40, 0.95);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #e2e8f0;
+  }
+}
+
+.navbar {
+  width: 100%;
+  padding: 0;
+}
+
+.nav-content {
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand-text {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(90deg, #667eea, #5b387d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: transform 0.3s ease;
+  letter-spacing: -0.02em;
+  cursor: default;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.desktop-nav {
+  display: flex;
+  margin: 0 2rem;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+  overflow: hidden;
+  color: inherit;
+
+  &:hover {
+    color: #667eea;
+  }
+
+  .nav-link-underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    transition: width 0.4s ease;
+  }
+
+  &:hover .nav-link-underline {
+    width: 100%;
+    animation: gradientShift 2s ease-in-out infinite;
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background: linear-gradient(90deg, #667eea, #764ba2);
+  }
+  50% {
+    background: linear-gradient(90deg, #764ba2, #667eea);
+  }
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme-toggle {
+  background: none;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: rotate(180deg);
+    border-color: #667eea;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+  }
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: currentColor;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+
+  &.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  &.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  &.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+}
+
+.mobile-nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white; // ✅ açıldıqda ağ olsun
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  border-top: 1px solid currentColor;
+  z-index: 9999; // ✅ daha yuxarıda
+
+  &.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.mobile-nav-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mobile-nav-link {
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 1rem 0;
+  border-bottom: 1px solid currentColor;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+
+  &:hover {
+    color: #667eea;
+    padding-left: 1rem;
+  }
+}
+
+.mobile-nav.active .mobile-nav-link {
+  animation-name: fadeInUp;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .brand-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-content {
+    padding: 0.75rem;
+  }
+
+  .brand-text {
+    font-size: 1.3rem;
+  }
+
+  .theme-toggle {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
 }
