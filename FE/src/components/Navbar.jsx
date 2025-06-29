@@ -11,7 +11,8 @@ const Navbar = () => {
     { name: 'About', path: '/about' },
     { name: 'HealthTracker', path: '/healthtracker' },
     { name: 'Practice', path: '/practice' },
-    { name: 'FAQ', path: '/fag' }, // Əgər səhifənin adı 'Fag'dırsa, 'fag' doğru olur
+    { name: 'FAQ', path: '/fag' }, 
+        { name: 'Reservation', path: '/reservation' },
     { name: 'Contact', path: '/contact' }
   ];
 

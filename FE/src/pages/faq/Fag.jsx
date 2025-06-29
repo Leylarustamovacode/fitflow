@@ -142,15 +142,12 @@ const Fag = () => {
                 <span className="stat-number">24/7</span>
                 <span className="stat-label">Support Available</span>
               </div>
-              <div className="stat-item">
-                <span className="stat-number">10+</span>
-                <span className="stat-label">Years Experience</span>
-              </div>
+             
             </div>
           </div>
         </header>
 
-        <div className="cta-section">
+        <div className="cta-section1">
           <div className="cta-card" onClick={() => openModal('advice')}>
             <div className="cta-icon">
               <Target />

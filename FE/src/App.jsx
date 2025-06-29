@@ -14,6 +14,7 @@ import Contact from './pages/contact/Contact'
 import Practice from './pages/practices/Practice';
 import HealthTracker from './pages/tracker/HealthTracker';
 import Fag from './pages/faq/Fag';
+import Reservation from './pages/reservation/Reservation';
 
 function App() {
 
@@ -30,7 +31,7 @@ function App() {
             <Route path="contact" element={<Contact />} />
             <Route path="practice" element={<Practice />} />
             <Route path="fag" element={<Fag />} />
-
+<Route path="reservation" element={<Reservation />} />
             <Route path="admin" element={<Admin />} />
             <Route path="adminadd" element={<AdminAdd />} />
             <Route path="detail" element={<Detail />} />
