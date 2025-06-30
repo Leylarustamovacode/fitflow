@@ -7,5 +7,171 @@
 }
 
 body {
-  padding-top: 60px; /* navbar hündürlüyünə uyğun ayarla */
+  padding-top: 60px; 
+}
+
+/* footer dark mode */
+.dark-mode .fitness-footer {
+  background: rgba(45, 45, 68, 0.95);
+  color: #e0e0e0;
+  border-top: 1px solid rgba(100, 181, 246, 0.2);
+}
+
+.dark-mode .fitness-footer .footer-brand .brand-name {
+  color: #e0e0e0;
+  background: linear-gradient(90deg, #64b5f6, #ab47bc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+
+.dark-mode .fitness-footer .footer-brand .brand-tagline {
+  color: rgba(224, 224, 224, 0.8);
+}
+
+.dark-mode .fitness-footer .footer-nav h4,
+.dark-mode .fitness-footer .footer-social h4,
+.dark-mode .fitness-footer .footer-newsletter h4 {
+  color: #e0e0e0;
+  text-shadow: none;
+}
+
+.dark-mode .fitness-footer .footer-nav ul li a {
+  color: rgba(176, 176, 176, 0.9);
+}
+
+.dark-mode .fitness-footer .footer-nav ul li a:hover {
+  color: #64b5f6;
+}
+
+.dark-mode .fitness-footer .footer-newsletter p {
+  color: rgba(176, 176, 176, 0.9);
+}
+
+.dark-mode .fitness-footer .footer-bottom {
+  border-top: 1px solid rgba(100, 181, 246, 0.2);
+}
+
+.dark-mode .fitness-footer .footer-bottom p {
+  color: rgba(176, 176, 176, 0.9);
+}
+
+.dark-mode .fitness-footer .footer-pulse {
+  background: linear-gradient(90deg, transparent, rgba(100, 181, 246, 0.1), transparent);
+}
+
+.dark-mode .fitness-footer .bg-elements .pulse-1,
+.dark-mode .fitness-footer .bg-elements .pulse-2,
+.dark-mode .fitness-footer .bg-elements .pulse-3 {
+  background: radial-gradient(circle, rgba(100, 181, 246, 0.08), transparent);
+}
+
+/* contact dark mode */
+
+.dark-mode .contact-page {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.dark-mode .page-title {
+  color: linear-gradient(90deg, #64b5f6, #9c27b0);
+  text-shadow: 2px 2px 4px rgba(255,255,255,0.1);
+}
+
+.dark-mode .page-subtitle {
+  color: linear-gradient(90deg, #64b5f6, #ab47bc);
+}
+.dark-mode .page-header{
+  color: white;
+}
+.dark-mode .contact-info{
+    background: #2d2d44;
+}
+.dark-mode .contact-form-section,
+.dark-mode .contact-info-section,
+.dark-mode .map-section,
+.dark-mode .social-section {
+  background: #2d2d44;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.dark-mode .contact-form-section::before {
+  background: linear-gradient(90deg, #64b5f6, #ab47bc);
+}
+
+.dark-mode .contact-info-section::before {
+  background: linear-gradient(90deg, #ab47bc, #64b5f6);
+}
+
+.dark-mode .form-title,
+.dark-mode .info-title {
+  color: #e0e0e0;
+}
+
+.dark-mode .form-input {
+  border: 2px solid #4a4a6a;
+  background: #3a3a54;
+  color: #e0e0e0;
+}
+
+.dark-mode .form-input:focus {
+  border-color: #64b5f6;
+  background: #2d2d44;
+  box-shadow: 0 0 0 3px rgba(100, 181, 246, 0.2);
+}
+
+.dark-mode .form-input::placeholder {
+  color: #a0a0a0;
+}
+
+.dark-mode .submit-btn {
+  background: linear-gradient(135deg, #64b5f6 0%, #ab47bc 100%);
+}
+
+.dark-mode .submit-btn:hover {
+  box-shadow: 0 10px 25px rgba(100, 181, 246, 0.4);
+}
+
+.dark-mode .info-item {
+  background: #3a3a54;
+}
+
+.dark-mode .info-item:hover {
+  background: #4a4a6a;
+}
+
+.dark-mode .info-icon {
+  background: linear-gradient(135deg, #64b5f6 0%, #ab47bc 100%);
+}
+
+.dark-mode .info-content h3 {
+  color: #e0e0e0;
+}
+
+.dark-mode .info-content p {
+  color: #b0b0b0;
+}
+
+.dark-mode .map-container {
+  background: #3a3a54;
+}
+
+.dark-mode .map-placeholder {
+  color: #b0b0b0;
+}
+
+.dark-mode .social-title {
+  color: #e0e0e0;
+}
+
+.dark-mode .lottie-container {
+  opacity: 0.05;
+}
+
+.dark-mode .floating-dots span {
+  background: #64b5f6;
+}
+
+.dark-mode .toast {
+  background: #2e7d32;
+  box-shadow: 0 10px 25px rgba(46, 125, 50, 0.4);
 }

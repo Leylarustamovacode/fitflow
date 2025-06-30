@@ -1,16 +1,18 @@
 import "./navbar.scss";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { ThemeContext } from '../ThemeContext';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { isDarkMode, toggleTheme } = useContext(ThemeContext);
 
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'HealthTracker', path: '/healthtracker' },
     { name: 'Practice', path: '/practice' },
+    { name: 'Sign in', path: '/auth' },
     { name: 'FAQ', path: '/fag' }, 
         { name: 'Reservation', path: '/reservation' },
     { name: 'Contact', path: '/contact' }
@@ -20,10 +22,7 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-
+ 
   useEffect(() => {
     document.body.className = isDarkMode ? 'dark-mode' : 'light-mode';
   }, [isDarkMode]);

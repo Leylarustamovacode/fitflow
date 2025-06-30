@@ -9,21 +9,22 @@
   color: linear-gradient(90deg, #667eea, #5b387d);
 }
 
-h1 {
-  text-align: center;
- color: transparent;
-background: linear-gradient(90deg, #667eea, #5b387d);
--webkit-background-clip: text;
-background-clip: text;
+// h1 {
+//   text-align: center;
+// //  color: transparent;
+// background: linear-gradient(90deg, #667eea, #5b387d);
+// -webkit-background-clip: text;
+// background-clip: text;
 
-  margin-bottom: 50px;
-  font-size: 42px;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
+//   margin-bottom: 50px;
+//   font-size: 42px;
+//   font-weight: 700;
+//   letter-spacing: 2px;
+// }
 
 /* Üst sətri flexlə yan-yana edir */
 .main-row {
+  margin-top: 50px;
   display: flex;
   gap: 40px;
   justify-content: center;

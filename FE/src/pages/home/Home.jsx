@@ -295,7 +295,7 @@ const Home = () => {
       
 
       {/* Hero Section */}
-      <section id="home1" className="hero-section" ref={el => sectionsRef.current[0] = el}>
+      <section id="home1" className="hero-section1" ref={el => sectionsRef.current[0] = el}>
         <div className="hero-particles">
           <div className="particle"></div>
           <div className="particle"></div>
@@ -307,7 +307,7 @@ const Home = () => {
           <div className="hero-badge">
             🎉 New AI-Powered Workouts Available Now!
           </div>
-          <h1 className="hero-titlem">Transform Your Fitness Journey with FitFlow</h1>
+          <h1 className="hero-titlem1">Transform Your Fitness Journey with FitFlow</h1>
           <p className="hero-subtitle">
             Experience the perfect blend of professional gym facilities and personalized home workouts, 
             powered by cutting-edge AI technology and expert guidance.

@@ -175,7 +175,7 @@ function HealthTracker() {
 
   return (
     <div className="contain">
-      <h1>Health Tracker</h1>
+      
 
       {/* Üst sıra: BMI və Water Tracker yan-yana */}
       <div className="main-row">
