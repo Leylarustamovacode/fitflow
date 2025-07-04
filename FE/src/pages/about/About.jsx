@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Play, Users, Clock, Target, Star, MapPin, Phone, Mail } from 'lucide-react';
 import './about.scss';
-
+import { Link } from 'react-router-dom';
 const About = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentTrainer, setCurrentTrainer] = useState(0);
@@ -96,30 +96,25 @@ const workoutImages = [
         </span>
       </p>
 
-      <div className="hero-buttons">
-        <button 
-          onClick={() => setCurrentPage('reservation')}
-          className="btn-primary"
-        >
-          <span>Book a Gym Session</span>
-          <div className="btn-overlay"></div>
-        </button>
+    
+<div className="hero-buttons">
+  <Link to="/reservation" className="btn-primary">
+    <span>Book a Gym Session</span>
+    <div className="btn-overlay"></div>
+  </Link>
 
-        <button 
-          onClick={() => setCurrentPage('practice')}
-          className="btn-secondary"
-        >
-          <span className="btn-content">
-            <Play className="btn-icon" />
-            Start at Home
-          </span>
-          <div className="btn-overlay"></div>
-          <span className="btn-hover-content">
-            <Play className="btn-icon" />
-            Start at Home
-          </span>
-        </button>
-      </div>
+  <Link to="/practice" className="btn-secondary">
+    <span className="btn-content">
+      <Play className="btn-icon" />
+      Start at Home
+    </span>
+    <div className="btn-overlay"></div>
+    <span className="btn-hover-content">
+      <Play className="btn-icon" />
+      Start at Home
+    </span>
+  </Link>
+</div>
 
       {/* Stats Section */}
       <div className="stats-grid">
@@ -241,12 +236,9 @@ const workoutImages = [
     <p className="cta-description">
       Begin your fitness journey with our professional trainers and fully equipped gym.
     </p>
-    <button 
-      onClick={() => setCurrentPage('reservation')}
-      className="cta-button"
-    >
-      Book a Gym Session
-    </button>
+    <Link to="/reservation" className="cta-button">
+  Book a Gym Session
+</Link>
   </div>
 </section>
 
@@ -276,9 +268,9 @@ const workoutImages = [
       </section>
     </section>
 
-    <button className="home-workout-button">
-      Start at Home
-    </button>
+   <Link to="/practice" className="home-workout-button">
+  Start at Home
+</Link>
   </section>
 
   {/* Workout Images Slider */}

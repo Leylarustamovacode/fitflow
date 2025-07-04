@@ -150,10 +150,10 @@ $white: #ffffff;
   
   span {
     display: inline-block;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+    // background: rgba(255, 255, 255, 0.2);
+    // backdrop-filter: blur(10px);
     color: $purple-700;
-    padding: 12px 24px;
+    padding: 0px 20px;
     border-radius: 30px;
     font-size: 18px;
     font-weight: 600;
@@ -700,9 +700,10 @@ $white: #ffffff;
   @include button-base;
   background: $white;
   color: $purple-700;
-  display: block;
+  // display: block;
   margin: 0 auto;
-  
+  text-decoration: none;
+  padding: 1px 24px;
   &:hover {
     box-shadow: 0 25px 50px rgba(255, 255, 255, 0.2);
   }
@@ -764,20 +765,18 @@ $white: #ffffff;
 }
 
 .home-workout-button {
-  width: 100%;
-  @include gradient-primary;
-  color: $white;
-  padding: 16px;
-  border-radius: 16px;
-  font-size: 20px;
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  text-decoration: none; // alt xətləri silir
+  color: white; // text rəngi
+     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); // istəyə uyğun
+  padding: 12px 24px;
+  border-radius: 30px;
+  display: inline-block;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
   &:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transform: scale(1.05);
+       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); // hover effekti
   }
 }
 

@@ -37,7 +37,7 @@ function App() {
               <Route path="healthtracker" element={<HealthTracker />} />
               <Route path="contact" element={<Contact />} />
               <Route path="practice" element={<Practice />} />
-              <Route path="fag" element={<Fag />} />
+              <Route path="faq" element={<Fag />} />
               <Route path="reservation" element={<Reservation />} />
               <Route path="login" element={<LoginPage />} />
               <Route path="register" element={<RegisterPage />} />

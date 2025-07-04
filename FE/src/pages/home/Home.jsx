@@ -1,8 +1,5 @@
-
-
-
-
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   ChevronLeft, ChevronRight, Star, Users, Clock, Trophy, Dumbbell,  Calendar, BookOpen, 
   Play, Check, ArrowRight, Menu, X, Phone, Mail, MapPin, Instagram, Facebook, Twitter,
@@ -409,10 +406,10 @@ const Home = () => {
                 <span className="workout-stat-label">Level</span>
               </div>
             </div>
-            <button className="btn-primary">
-              <Play size={20} />
-              Start Workout
-            </button>
+            <Link to="/practice" className="btn-primary">
+  <Play size={20} />
+  Start Workout
+</Link>
           </div>
         </div>
       </section>
@@ -605,7 +602,7 @@ const Home = () => {
             Your journey to a healthier, stronger you begins today.
           </p>
           <div className="cta-buttons">
-            <a href="/signup" className="btn-primary">
+            <a href="/practice" className="btn-primary">
               <ArrowRight size={20} />
               Start Free Trial
             </a>

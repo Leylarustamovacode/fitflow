@@ -1,7 +1,6 @@
-import React from 'react'
-import "./footer.scss"
-import { useState } from 'react';
-
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import "./footer.scss";
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -29,12 +28,14 @@ const Footer = () => {
         <div className="footer-nav">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#healthtracker">HealthTracker</a></li>
-            <li><a href="#practice">Practice</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/healthtracker">HealthTracker</Link></li>
+            <li><Link to="/practice">Practice</Link></li>
+            <li><Link to="/dashboard">Dashboard</Link></li>
+            <li><Link to="/faq">FAQ</Link></li>
+            <li><Link to="/reservation">Reservation</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
 

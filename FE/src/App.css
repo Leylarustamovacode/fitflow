@@ -473,3 +473,9 @@ background: #2d2d44;
 background: #2d2d44;
    
 }
+.dark-mode .login-page{
+   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+.dark-mode .register-page{
+   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}

@@ -138,14 +138,14 @@
 // BMI specific styles
 .bmi-area {
   &::before {
-    background: linear-gradient(90deg, #667eea, #764ba2)
+    background: linear-gradient(90deg, #667eea, #764ba2);
   }
-  
+
   p {
     color: #2d3748;
     font-size: 1.1rem;
     margin: 15px 0;
-    
+
     strong {
       color: #ff6b6b;
       font-size: 1.3rem;
@@ -155,25 +155,25 @@
 
 .bmi-indicator {
   margin-top: 20px;
-  
+
   .bmi-bar-wrapper {
     position: relative;
     height: 20px;
     margin: 15px 0;
   }
-  
+
   .bmi-bar {
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, 
-      #3498db 0% 18.5%, 
-      #2ecc71 18.5% 25%, 
-      #f39c12 25% 30%, 
-      #e74c3c 30% 100%);
+      #3498db 0% 30.25%,   /* Underweight: 0 - 18.5 */
+      #2ecc71 40.25% 30.25%, /* Normal: 18.5 - 24.9 */
+      #f39c12 62.25% 34.75%, /* Overweight: 25 - 29.9 */
+      #e74c3c 74.75% 100%);  /* Obese: 30+ */
     border-radius: 10px;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-  
+
   .bmi-marker {
     position: absolute;
     top: -5px;
@@ -183,7 +183,7 @@
     border-radius: 2px;
     transform: translateX(-50%);
     animation: bounce 2s infinite;
-    
+
     &::after {
       content: '▼';
       position: absolute;
@@ -194,16 +194,16 @@
       font-size: 12px;
     }
   }
-  
+
   .bmi-labels {
     display: grid;
-    grid-template-columns: 18.5% 6.5% 5% 70%;
+    grid-template-columns: 46.25% 16% 12.5% 25.25%;
     font-size: 0.8rem;
     color: #666;
     margin-top: 10px;
     text-align: center;
   }
-  
+
   .bmi-status {
     text-align: center;
     font-size: 1.2rem;
@@ -211,12 +211,13 @@
     padding: 10px;
     background: rgba(79, 172, 254, 0.1);
     border-radius: 10px;
-    
+
     strong {
       color: #4facfe;
     }
   }
 }
+
 
 // Water tracker styles
 .water-area {

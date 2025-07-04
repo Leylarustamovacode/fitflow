@@ -181,46 +181,47 @@ function HealthTracker() {
       <div className="main-row">
         {/* BMI */}
         <div className="card bmi-area">
-          <h2>BMI Calculator</h2>
-          <label>Height (cm):</label>
-          <input
-            type="number"
-            value={height}
-            onChange={(e) => setHeight(e.target.value)}
-            placeholder="Enter your height"
-          />
-          <label>Weight (kg):</label>
-          <input
-            type="number"
-            value={weight}
-            onChange={(e) => setWeight(e.target.value)}
-            placeholder="Enter your weight"
-          />
-          <button className="hbtn" onClick={handleBmi}>Calculate BMI</button>
-          {bmi && (
-            <>
-              <p>Your BMI: <strong>{bmi}</strong></p>
-              <div className="bmi-indicator">
-                <div className="bmi-bar-wrapper">
-                  <div className="bmi-bar"></div>
-                  <div
-                    className="bmi-marker"
-                    style={{ left: `${getBmiPercentage(bmi)}%` }}
-                  ></div>
-                </div>
-                <div className="bmi-labels">
-                  <span>Underweight</span>
-                  <span>Normal</span>
-                  <span>Overweight</span>
-                  <span>Obese</span>
-                </div>
-                <p className="bmi-status">
-                  Status: <strong>{getBmiStatus(bmi)}</strong>
-                </p>
-              </div>
-            </>
-          )}
+  <h2>BMI Calculator</h2>
+  <label>Height (cm):</label>
+  <input
+    type="number"
+    value={height}
+    onChange={(e) => setHeight(e.target.value)}
+    placeholder="Enter your height"
+  />
+  <label>Weight (kg):</label>
+  <input
+    type="number"
+    value={weight}
+    onChange={(e) => setWeight(e.target.value)}
+    placeholder="Enter your weight"
+  />
+  <button className="hbtn" onClick={handleBmi}>Calculate BMI</button>
+  {bmi && (
+    <>
+      <p>Your BMI: <strong>{bmi}</strong></p>
+      <div className="bmi-indicator">
+        <div className="bmi-bar-wrapper">
+          <div className="bmi-bar"></div>
+          <div
+            className="bmi-marker"
+            style={{ left: `${getBmiPercentage(bmi)}%` }}
+          ></div>
         </div>
+        <div className="bmi-labels">
+          <span>Underweight</span>
+          <span>Normal</span>
+          <span>Overweight</span>
+          <span>Obese</span>
+        </div>
+        <p className="bmi-status">
+          Status: <strong>{getBmiStatus(bmi)}</strong>
+        </p>
+      </div>
+    </>
+  )}
+</div>
+
 
         {/* Water Tracker */}
         <div className="card water-area">

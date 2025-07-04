@@ -390,7 +390,7 @@ const Reservation = () => {
     }
   `;
  return (
-    <div style={containerStyle}>
+    <div className='reserv' style={containerStyle}>
       <style>{keyframes}</style>
       
       {notification && (
@@ -400,11 +400,11 @@ const Reservation = () => {
         </div>
       )}
 
-      <div style={mainCardStyle}>
+      <div className="reserv"style={mainCardStyle}>
         <div style={headerStyle}>
-          <h1 style={titleStyle}>🏋️ FitZone Pro</h1>
+          <h1 style={titleStyle}>🏋️ FitFlow Pro</h1>
           <p style={{ fontSize: '1.2rem', opacity: '0.95', margin: '0' }}>
-            Premium Gym Rezervasiya Sistemi
+            Premium Rezervasiya Sistemi
           </p>
         </div>
 
