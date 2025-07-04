@@ -229,58 +229,7 @@ const workoutImages = [
 </section>
 
 
-      {/* Trainers Section */}
-    <section className="trainers-section">
-  <div className="container">
-    <div className="section-header">
-      <h2 className="section-title">Our Trainers</h2>
-      <div className="section-divider"></div>
-    </div>
 
-    <div className="trainers-container">
-      <div className="trainer-card">
-        <div className="trainer-content">
-          <div className="trainer-image-container">
-            <img 
-              src={trainers[currentTrainer].image} 
-              alt={trainers[currentTrainer].name}
-              className="trainer-image"
-            />
-            <div className="trainer-badge">
-              {trainers[currentTrainer].experience}
-            </div>
-          </div>
-
-          <div className="trainer-info">
-            <h3 className="trainer-name">
-              {trainers[currentTrainer].name}
-            </h3>
-            <p className="trainer-specialty">
-              {trainers[currentTrainer].specialty}
-            </p>
-            <button className="trainer-cta-button">
-              Book Now
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Navigation buttons */}
-      <button 
-        onClick={prevTrainer}
-        className="trainer-nav-btn trainer-nav-prev"
-      >
-        <ChevronLeft className="nav-icon" />
-      </button>
-      <button 
-        onClick={nextTrainer}
-        className="trainer-nav-btn trainer-nav-next"
-      >
-        <ChevronRight className="nav-icon" />
-      </button>
-    </div>
-  </div>
-</section>
 
 
       {/* Gym Reservation CTA */}
@@ -303,72 +252,64 @@ const workoutImages = [
 
 
       {/* Home Workout Section */}
-      <section className="workout-section">
-  <div className="container">
-    <div className="section-header">
-      <h2 className="section-title">Home Workout Alternative</h2>
-      <div className="section-divider"></div>
-    </div>
+     <section className="home-workout-section">
+  <section className="home-workout-info">
+    <section className="home-workout-card">
+      <h3 className="home-workout-title">Why Home Workouts?</h3>
+      <p className="home-workout-description">
+        Don’t fall behind even on the days you can’t make it to the gym. FitFlow keeps you in shape.
+      </p>
 
-    <div className="workout-content">
-      <div className="workout-info">
-        <div className="card1">
-          <h3 className="card-title">Why Home Workouts?</h3>
-          <p className="card-text">
-            Don’t fall behind even on the days you can’t make it to the gym. FitFlow keeps you in shape.
-          </p>
+      <section className="home-feature-list">
+        <section className="home-feature-item">
+          <Users className="home-feature-icon icon-purple" />
+          <span>Different workout plans by gender</span>
+        </section>
+        <section className="home-feature-item">
+          <Clock className="home-feature-icon icon-blue" />
+          <span>Timer-based rests and circuits</span>
+        </section>
+        <section className="home-feature-item">
+          <Play className="home-feature-icon icon-green" />
+          <span>Exercise animations</span>
+        </section>
+      </section>
+    </section>
 
-          <div className="feature-list">
-            <div className="feature-item">
-              <Users className="feature-icon feature-icon-purple" />
-              <span>Different workout plans by gender</span>
-            </div>
-            <div className="feature-item">
-              <Clock className="feature-icon feature-icon-blue" />
-              <span>Timer-based rests and circuits</span>
-            </div>
-            <div className="feature-item">
-              <Play className="feature-icon feature-icon-green" />
-              <span>Exercise animations</span>
-            </div>
-          </div>
-        </div>
+    <button className="home-workout-button">
+      Start at Home
+    </button>
+  </section>
 
-        <button className="workout-cta-button">
-          Start at Home
-        </button>
-      </div>
+  {/* Workout Images Slider */}
+  <section className="home-slider-wrapper">
+    <section className="home-slider">
+      <img 
+        src={workoutImages[currentWorkout]} 
+        alt="Home Workout" 
+        className="home-slider-image"
+        key={currentWorkout}
+      />
+      <section className="home-slider-overlay"></section>
+      <section className="home-slider-info">
+        <h4 className="home-slider-title">Home Workout</h4>
+        <p className="home-slider-subtitle">Anywhere, Anytime</p>
+      </section>
+    </section>
 
-      {/* Workout Images Slider */}
-      <div className="workout-slider-container">
-        <div className="workout-slider">
-          <img 
-            src={workoutImages[currentWorkout]} 
-            alt="Home Workout" 
-            className="workout-image"
-            key={currentWorkout}
-          />
-          <div className="workout-overlay"></div>
-          <div className="workout-info-overlay">
-            <h4 className="workout-overlay-title">Home Workout</h4>
-            <p className="workout-overlay-text">Anywhere, Anytime</p>
-          </div>
-        </div>
-
-        {/* Slide indicators */}
-        <div className="slider-indicators">
-          {workoutImages.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentWorkout(index)}
-              className={`indicator ${currentWorkout === index ? 'active' : ''}`}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-  </div>
+    {/* Slide Indicators */}
+    <section className="home-slider-indicators">
+      {workoutImages.map((_, index) => (
+        <button
+          key={index}
+          onClick={() => setCurrentWorkout(index)}
+          className={`home-indicator ${currentWorkout === index ? 'active' : ''}`}
+        />
+      ))}
+    </section>
+  </section>
 </section>
+
 
       
     

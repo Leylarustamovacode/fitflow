@@ -252,30 +252,55 @@ function HealthTracker() {
       </div>
 
       {/* Alt sıra: Sleep Tracker */}
-      <div className="card sleep-area">
-        <h2>
-          Sleep Tracker <span className="sleep-icon" role="img" aria-label="Moon">🌙</span>
-        </h2>
-        <label>Bed Time:</label>
-        <input
-          type="time"
-          value={bedTime}
-          onChange={(e) => setBedTime(e.target.value)}
-        />
-        <label>Wake Up Time:</label>
-        <input
-          type="time"
-          value={wakeUpTime}
-          onChange={(e) => setWakeUpTime(e.target.value)}
-        />
+   <section className="card sleep-area">
+  
+  {/* Sleep Tracker Title Full Width */}
+  <header className="sleep-header">
+    <h2 className="sleep-title">
+      Sleep Tracker
+      <span className="sleep-icon" role="img" aria-label="Moon">🌙</span>
+    </h2>
+  </header>
 
-        <div className="sleep-duration-bar-wrapper">
-          <div className="sleep-duration-bar" style={{ width: `${getSleepPercent(sleepDuration)}%` }}></div>
-        </div>
+  {/* Bed Time */}
+  <div className="sleep-input-group">
+    <label htmlFor="bed-time">Bed Time:</label>
+    <input
+      id="bed-time"
+      type="time"
+      value={bedTime}
+      onChange={(e) => setBedTime(e.target.value)}
+    />
+  </div>
 
-        <p>Sleep Duration: <strong>{formatDuration(sleepDuration)}</strong></p>
-        <p>Status: <strong>{sleepStatus || "--"}</strong></p>
-      </div>
+  {/* Wake Up Time */}
+  <div className="sleep-input-group">
+    <label htmlFor="wake-up-time">Wake Up Time:</label>
+    <input
+      id="wake-up-time"
+      type="time"
+      value={wakeUpTime}
+      onChange={(e) => setWakeUpTime(e.target.value)}
+    />
+  </div>
+
+  {/* Sleep Duration Bar */}
+  <div className="sleep-duration-bar-wrapper">
+    <div
+      className="sleep-duration-bar"
+      style={{ width: `${getSleepPercent(sleepDuration)}%` }}
+    />
+  </div>
+
+  {/* Duration and Status */}
+  <p className="sleep-info">
+    Sleep Duration: <strong>{formatDuration(sleepDuration)}</strong>
+  </p>
+  <p className="sleep-info">
+    Status: <strong>{sleepStatus || "--"}</strong>
+  </p>
+</section>
+
 
       {/* Alt sıra: Weekly Sleep Chart */}
       <div className="weekly-sleep-graph-area">

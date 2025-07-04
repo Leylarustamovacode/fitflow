@@ -12,7 +12,8 @@ const Navbar = () => {
     { name: 'About', path: '/about' },
     { name: 'HealthTracker', path: '/healthtracker' },
     { name: 'Practice', path: '/practice' },
-    { name: 'Sign in', path: '/auth' },
+    
+    { name: 'dashboard', path: '/dashboard' },
     { name: 'FAQ', path: '/fag' }, 
         { name: 'Reservation', path: '/reservation' },
     { name: 'Contact', path: '/contact' }

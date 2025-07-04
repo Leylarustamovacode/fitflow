@@ -25,14 +25,13 @@ const Reservation = () => {
   }, []);
 
   const workoutTypes = [
-    { name: 'Cardio', icon: '💓', price: '12 AZN' },
-    { name: 'Gym', icon: '💪', price: '15 AZN' },
-    { name: 'TRX', icon: '🏋️', price: '18 AZN' },
-    { name: 'Yoga', icon: '🧘', price: '14 AZN' },
-    { name: 'Pilates', icon: '🤸', price: '16 AZN' },
-    { name: 'Crossfit', icon: '⚡', price: '20 AZN' },
-    { name: 'Zumba', icon: '💃', price: '13 AZN' },
-    { name: 'Personal Training', icon: '👨‍💼', price: '35 AZN' }
+    { name: 'Football', icon: '🏋️', price: '12 AZN' },
+    { name: 'Yoga', icon: '🧘', price: '15 AZN' },
+    { name: 'Swimming', icon: '💓', price: '18 AZN' },
+    { name: 'Tennis', icon: '⚡', price: '14 AZN' },
+    { name: 'BasketBall', icon: '🤸', price: '16 AZN' },
+    { name: 'Fitness', icon: '💪', price: '20 AZN' },
+    
   ];
 
   const timeSlots = [
@@ -40,12 +39,6 @@ const Reservation = () => {
     '15:00', '16:00', '17:00', '18:00', '19:00', '20:00'
   ];
 
-  const paymentMethods = [
-    { name: 'Nəğd ödəniş', icon: '💵' },
-    { name: 'Kart ilə ödəniş', icon: '💳' },
-    { name: 'Bank köçürməsi', icon: '🏦' },
-    { name: 'Abunə kartı', icon: '🎫' }
-  ];
 
   const showNotification = (message, type) => {
     setNotification({ message, type });
@@ -240,26 +233,8 @@ const Reservation = () => {
     boxShadow: isSelected ? '0 8px 25px rgba(102, 126, 234, 0.15)' : (isHovered ? '0 8px 25px rgba(0,0,0,0.1)' : 'none')
   });
 
-  const paymentGridStyle = {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-    gap: '15px',
-    marginTop: '10px'
-  };
 
-  const getPaymentCardStyle = (isSelected) => ({
-    padding: '16px',
-    border: isSelected ? '2px solid #667eea' : '2px solid #e5e7eb',
-    borderRadius: '12px',
-    cursor: 'pointer',
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-    backgroundColor: isSelected ? '#f0f4ff' : 'white',
-    textAlign: 'center',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: '10px'
-  });
+ 
 
   const getButtonStyle = (isLoading, isHovered) => ({
     background: isLoading ? '#9ca3af' : 'linear-gradient(135deg, #667eea, #764ba2)',
@@ -554,24 +529,6 @@ const Reservation = () => {
                 </div>
               </div>
 
-              <div style={inputGroupStyle}>
-                <label style={labelStyle}>
-                  <CreditCard size={18} />
-                  Ödəniş üsulu *
-                </label>
-                <div style={paymentGridStyle}>
-                  {paymentMethods.map(method => (
-                    <div
-                      key={method.name}
-                      style={getPaymentCardStyle(formData.paymentMethod === method.name)}
-                      onClick={() => handleInputChange({ target: { name: 'paymentMethod', value: method.name } })}
-                    >
-                      <span style={{ fontSize: '1.5rem' }}>{method.icon}</span>
-                      <span style={{ fontWeight: '600' }}>{method.name}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
 
               <button 
                 onClick={handleSubmit}

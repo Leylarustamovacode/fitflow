@@ -8,13 +8,16 @@ import {
   Play, Check, ArrowRight, Menu, X, Phone, Mail, MapPin, Instagram, Facebook, Twitter,
   Zap, Target, Award, Heart, Shield, Smartphone, Wifi, Camera, MessageCircle
 } from 'lucide-react';
-import "./home.scss"
+import { Eye } from "lucide-react";
+import "./home.scss";
+import { useNavigate } from "react-router-dom";
 const Home = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [currentWorkout, setCurrentWorkout] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [videoPlaying, setVideoPlaying] = useState(false);
   const [activeFeature, setActiveFeature] = useState(0);
+  const navigate = useNavigate();
   const [counters, setCounters] = useState({
     users: 0,
     hours: 0,
@@ -22,8 +25,20 @@ const Home = () => {
     calories: 0
   });
 
-  const heroVideoRef = useRef(null);
+  
+
+  //sportmens
+ const [teamMembers, setTeamMembers] = useState([]);
   const sectionsRef = useRef([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/teacher")
+      .then((res) => res.json())
+      .then((data) => setTeamMembers(data))
+      .catch((err) => console.error("Fetch error:", err));
+  }, []);
+
+
 
   // Intersection Observer for animations
   useEffect(() => {
@@ -183,12 +198,7 @@ const Home = () => {
   ];
 
   const features = [
-    // {
-    //   icon: <Smartphone className="w-12 h-12" />,
-    //   title: "Smart AI Coaching",
-    //   description: "Personalized workouts powered by artificial intelligence",
-    //   color: "from-blue-500 to-cyan-500"
-    // },
+    
     {
       icon: <Wifi className="w-12 h-12" />,
       title: "Live Streaming",
@@ -257,36 +267,36 @@ const Home = () => {
     }
   ];
 
-  const teamMembers = [
-    {
-      name: "Alex Thompson",
-      role: "Head Trainer",
-      specialty: "Strength & Conditioning",
-      image: "👨‍🏫",
-      experience: "12 years"
-    },
-    {
-      name: "Maria Santos",
-      role: "Yoga Instructor",
-      specialty: "Mindfulness & Flexibility",
-      image: "🧘‍♀️",
-      experience: "8 years"
-    },
-    {
-      name: "James Wilson",
-      role: "Nutritionist",
-      specialty: "Sports Nutrition",
-      image: "👨‍⚕️",
-      experience: "10 years"
-    },
-    {
-      name: "Lisa Chang",
-      role: "Wellness Coach",
-      specialty: "Holistic Health",
-      image: "👩‍⚕️",
-      experience: "15 years"
-    }
-  ];
+  // const teamMembers = [
+  //   {
+  //     name: "Alex Thompson",
+  //     role: "Head Trainer",
+  //     specialty: "Strength & Conditioning",
+  //     image: "👨‍🏫",
+  //     experience: "12 years"
+  //   },
+  //   {
+  //     name: "Maria Santos",
+  //     role: "Yoga Instructor",
+  //     specialty: "Mindfulness & Flexibility",
+  //     image: "🧘‍♀️",
+  //     experience: "8 years"
+  //   },
+  //   {
+  //     name: "James Wilson",
+  //     role: "Nutritionist",
+  //     specialty: "Sports Nutrition",
+  //     image: "👨‍⚕️",
+  //     experience: "10 years"
+  //   },
+  //   {
+  //     name: "Lisa Chang",
+  //     role: "Wellness Coach",
+  //     specialty: "Holistic Health",
+  //     image: "👩‍⚕️",
+  //     experience: "15 years"
+  //   }
+  // ];
 
   return (
     <div className="fitflow-landing">
@@ -486,61 +496,47 @@ const Home = () => {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="pricing-section" ref={el => sectionsRef.current[5] = el}>
-        <div className="pricing-container">
-          <div className="section-header">
-            <div className="section-badge">Flexible Plans</div>
-            <h2 className="section-title">Choose Your Perfect Plan</h2>
-            <p className="section-description">
-              Start your fitness journey with a plan that fits your lifestyle and goals
-            </p>
-          </div>
-          <div className="pricing-grid">
-            {pricingPlans.map((plan, index) => (
-              <div key={index} className={`pricing-card ${plan.popular ? 'popular' : ''}`}>
-                {plan.popular && <div className="popular-badge">Most Popular</div>}
-                <div className="pricing-header">
-                  <h3 className="pricing-name">{plan.name}</h3>
-                  <div>
-                    <span className="pricing-price">{plan.price}</span>
-                    <span className="pricing-period">{plan.period}</span>
-                  </div>
-                </div>
-                <ul className="pricing-features">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex}>{feature}</li>
-                  ))}
-                </ul>
-                <button className="pricing-btn">Get Started</button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Team Section */}
-      <section id="team" className="team-section" ref={el => sectionsRef.current[6] = el}>
-        <div className="team-container">
-          <div className="section-header">
-            <div className="section-badge">Expert Team</div>
-            <h2 className="section-title">Meet Your Fitness Experts</h2>
-            <p className="section-description">
-              Our certified trainers and wellness experts are here to guide you every step of the way
-            </p>
-          </div>
-          <div className="team-grid">
-            {teamMembers.map((member, index) => (
-              <div key={index} className="team-card">
-                <span className="team-avatar">{member.image}</span>
-                <h3 className="team-name">{member.name}</h3>
-                <p className="team-role">{member.role}</p>
-                <p className="team-specialty">{member.specialty}</p>
-                <span className="team-experience">{member.experience} experience</span>
-              </div>
-            ))}
-          </div>
+      <section id="team" className="team-section py-5">
+      <div className="container">
+        <div className="section-header text-center mb-5">
+          <div className="section-badge">Expert Team</div>
+          <h2 className="section-title fw-bold">Meet Your Fitness Experts</h2>
+          <p className="section-description text-muted">
+            Our certified trainers and wellness experts are here to guide you every step of the way
+          </p>
         </div>
-      </section>
+        <div className="row g-4">
+          {teamMembers.map((member) => (
+            <div key={member._id} className="col-md-4">
+              <div className="team-card position-relative overflow-hidden">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-100 rounded shadow-sm team-img"
+                  style={{ height: "300px", objectFit: "cover" }}
+                />
+                <div className="team-overlay d-flex justify-content-center align-items-center">
+                  <Eye
+                    color="white"
+                    size={36}
+                    className="cursor-pointer"
+                    onClick={() => navigate(`/detail/${member._id}`)}
+                  />
+                </div>
+                <div className="p-3 text-center  rounded-bottom">
+                  <h5 className="mb-1">{member.name}</h5>
+                  <p className="mb-1 text-primary fw-semibold">{member.sport}</p>
+                  <p className="small text-muted">{member.text}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
 
       {/* Enhanced Blog Section */}
       <section id="blog" className="blog-section" ref={el => sectionsRef.current[7] = el}>

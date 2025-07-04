@@ -6,10 +6,6 @@
              Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
-body {
-  padding-top: 60px; 
-}
-
 /* footer dark mode */
 .dark-mode .fitness-footer {
   background: rgba(45, 45, 68, 0.95);
@@ -174,4 +170,306 @@ body {
 .dark-mode .toast {
   background: #2e7d32;
   box-shadow: 0 10px 25px rgba(46, 125, 50, 0.4);
+}
+/* BLOG DARK MODE */
+.dark-mode .blog-title {
+  color: #f0f0f0;
+}
+
+.dark-mode .blog-excerpt {
+  color: #bbbbbb;
+}
+
+.dark-mode .blog-meta {
+  color: #64b5f6;
+}
+
+.dark-mode .blog-date {
+  color: #999999;
+}
+
+/* CTA SECTION DARK MODE */
+.dark-mode .cta-section {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #ffffff;
+}
+
+.dark-mode .cta-bg {
+  opacity: 0.05;
+  background-image: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
+}
+
+.dark-mode .cta-title {
+  color: #ffffff;
+}
+
+.dark-mode .cta-description {
+  color: #d0d0d0;
+}
+
+.dark-mode .cta-buttons .btn-primary,
+.dark-mode .cta-buttons .btn-secondary {
+  background-color: #64b5f6;
+  color: white;
+  border: none;
+}
+
+.dark-mode .cta-buttons .btn-primary:hover,
+.dark-mode .cta-buttons .btn-secondary:hover {
+  background-color: #5a9bd5;
+}
+.dark-mode .team-section{
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); 
+ 
+}
+/* BLOG SECTION DARK MODE */
+.dark-mode .blog-section {
+  background: #1a1a2e;
+}
+
+.dark-mode .blog-title {
+  color: #f0f0f0;
+}
+
+.dark-mode .blog-excerpt {
+  color: #cccccc;
+}
+
+.dark-mode .blog-meta {
+  color: #64b5f6;
+}
+
+.dark-mode .blog-date {
+  color: #999999;
+}
+
+/* CTA SECTION DARK MODE */
+.dark-mode .cta-section {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #ffffff;
+}
+
+.dark-mode .cta-bg {
+  opacity: 0.05;
+  background-image: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+}
+
+.dark-mode .cta-title {
+  color: #ffffff;
+}
+
+.dark-mode .cta-description {
+  color: #d0d0d0;
+}
+
+.dark-mode .cta-buttons .btn-primary,
+.dark-mode .cta-buttons .btn-secondary {
+  background-color: #64b5f6;
+  color: white;
+  border: none;
+}
+
+.dark-mode .cta-buttons .btn-primary:hover,
+.dark-mode .cta-buttons .btn-secondary:hover {
+  background-color: #5a9bd5;
+}
+
+/* ANIMATION ELEMENTS */
+.dark-mode .animate-in {
+  /* Animasiya rəngləri dəyişmir, amma arxa planla kontrastı qoruyur */
+}
+
+/* RESPONSIVE SECTIONLAR DARK MODE-A TƏSİR ETMİR */
+.dark-mode .hero-section1{
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+
+}
+.dark-mode .features-section{
+  background: linear-gradient(135deg, #1a1a2ee0 0%, #16213ef0 100%);
+    
+}
+.dark-mode .feature-card{
+      background:#1a1a2e ;
+      color: white;
+    }
+    .dark-mode .section-title{
+      color: white;
+    } .dark-mode .feature-title{
+      color: white;
+    }
+     .dark-mode .section-description{
+      color: rgba(255, 255, 255, 0.727);
+    } 
+
+    .dark-mode .workout-section{
+  background: linear-gradient(135deg, #1a1a2ee0 0%, #16213ef0 100%);
+    
+}
+.dark-mode .fitflow-landing{
+  color: white;
+}
+.dark-mode .stats-section{
+  background: linear-gradient(135deg, #1a1a2ee0 0%, #16213ef0 100%);
+    
+}
+.dark-mode .testimonials-section{
+  background: linear-gradient(135deg, #1a1a2ee0 0%, #16213ef0 100%);
+    
+}
+.dark-mode .testimonial-card{
+  background: linear-gradient(135deg, #1a1a2ee0 0%, #16213ef0 100%);
+    
+}
+.dark-mode .testimonial-author{
+  color: white;
+}
+.dark-mode .team-section .section-header .section-title{
+  color: white;
+}
+.dark-mode .team-section .section-header .section-description{
+    color: rgb(255, 255, 255);
+
+}
+.dark-mode .team-section .team-card .p-3{
+   background: #1a1a2e;
+}
+.dark-mode .team-section .team-card .p-3 h5{
+       color: rgb(255, 255, 255);
+
+}
+.dark-mode .team-section .team-card .p-3 .small{
+       color: rgb(255, 255, 255);
+
+}
+.dark-mode .blog-card{
+    background: linear-gradient(135deg, #1a1a2ee0 0%, #16213ef0 100%);
+
+}
+
+.dark-mode .workout-title{
+  background: #e2e4e8;
+      -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.dark-mode .workout-description{
+  color: white;
+}
+
+.dark-mode .hero-section{
+  background: linear-gradient(135deg, #1a1a2ee0 0%, #16213ef0 100%);
+}
+.dark-mode .about-section{
+  background: linear-gradient(135deg, #1a1a2ec7 0%, #16213ef0 100%);
+}
+.dark-mode .card1{
+  background: linear-gradient(135deg, #1a1a2ec7 0%, #16213ef0 100%);
+}
+.dark-mode .card-title{
+  color: white;
+}
+.dark-mode .home-workout-section{
+  background: linear-gradient(135deg, #1a1a2ee0 0%, #16213ef0 100%);
+}
+.dark-mode .home-workout-title{
+ color: white;
+}
+.dark-mode .home-workout-description{
+ color: white;
+}
+.dark-mode .hero-description{
+ color: white;
+}
+body .dark-mode {
+  color: white;
+ background: linear-gradient(135deg, #1a1a2ee2 0%, #16213ed0 100%);
+}
+.dark-mode .card{
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213ef0 100%);
+}
+.dark-mode .card h2{
+  color: white;
+}
+.dark-mode .card label{
+  color: white;
+}
+.dark-mode .bmi-area p{
+  color: white;
+}
+.dark-mode .sleep-area p{
+  color: white;
+}
+.dark-mode .weekly-sleep-graph-area{
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213ef0 100%);
+
+}
+.dark-mode .weekly-sleep-graph-area h2{
+    color: white;
+
+}
+
+.dark-mode .weekly-sleep-graph-area .sleep-labels span{
+    color: white;
+
+}
+
+.dark-mode .practice-gender-selection{
+   background: linear-gradient(135deg, #1a1a2ee2 0%, #16213ed0 100%);
+
+}
+
+.dark-mode .practice-container{
+   background: linear-gradient(135deg, #1a1a2ee2 0%, #16213ed0 100%);
+
+}
+.dark-mode .practice-container h1{
+  color: white;
+
+}
+
+.dark-mode .practice-exercise-screen{
+   background: linear-gradient(135deg, #1a1a2ee2 0%, #16213ed0 100%);
+
+}
+
+.dark-mode .practice-exercise-screen .practice-exercise-content{
+   background: linear-gradient(135deg, #1a1a2ee2 0%, #16213ed0 100%);
+
+}
+
+.dark-mode .practice-exercise-screen .practice-exercise-info .practice-exercise-name
+{
+  color: white;
+
+}
+
+.dark-mode .practice-completion-screen{
+   background: linear-gradient(135deg, #1a1a2ee2 0%, #16213ed0 100%);
+
+}
+
+.dark-mode .practice-completion-screen .practice-completion-content{
+   background: linear-gradient(135deg, #1a1a2ee2 0%, #16213ed0 100%);
+
+}
+.dark-mode .practice-completion-screen .practice-completion-content h1{
+  color: white;
+
+}
+.dark-mode .header{
+   background: #2d2d44;
+
+}
+.dark-mode .fitness-faq {
+ background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+   
+}
+.dark-mode .cta-card {
+background: #2d2d44;
+   
+}
+.dark-mode .faq-section {
+background: #2d2d44;
+   
 }
