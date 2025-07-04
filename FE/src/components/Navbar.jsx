@@ -13,7 +13,7 @@ const Navbar = () => {
     { name: 'HealthTracker', path: '/healthtracker' },
     { name: 'Practice', path: '/practice' },
     
-    { name: 'dashboard', path: '/dashboard' },
+    { name: 'Dashboard', path: '/dashboard' },
     { name: 'FAQ', path: '/faq' }, 
         { name: 'Reservation', path: '/reservation' },
     { name: 'Contact', path: '/contact' }
